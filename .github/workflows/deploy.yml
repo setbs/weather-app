@@ -20,9 +20,9 @@ jobs:
         run: npm install
 
       - name: Build
+        run: npm run build
         env:
           VITE_WEATHER_API_KEY: ${{ secrets.VITE_WEATHER_API_KEY }}
-        run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
