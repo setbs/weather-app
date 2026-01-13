@@ -22,9 +22,13 @@ function City() {
   }, [name]);
 
   if (loading) return <p>Loading...</p>;
-  if (!weather) return <p>Не вдалося отримати погоду 😢</p>;
+  if (!weather) return <p className="muted">Can`t get a weather 😢</p>;
 
-  return <WeatherDetails city={name} data={weather} />;
+  return (
+    <section className="panel">
+      <WeatherDetails city={name} data={weather} />
+    </section>
+  );
 }
 
 export default City;

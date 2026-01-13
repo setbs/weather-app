@@ -6,12 +6,10 @@ function UnitSwitcher() {
     const unit = useSelector((state) => state.unit.value);
 
     return (
-        <div>
-            <button onClick={() => dispatch(setUnit("C"))}>°C</button>
-            <button onClick={() => dispatch(setUnit("F"))}>°F</button>
-            <button onClick={() => dispatch(setUnit("K"))}>K</button>
-
-            <p> Chosen unit: {unit}</p>
+        <div className="unit-switcher" aria-label="Switch temperature unit">
+            <button className={unit === "C" ? "active" : ""} onClick={() => dispatch(setUnit("C"))}>°C</button>
+            <button className={unit === "F" ? "active" : ""} onClick={() => dispatch(setUnit("F"))}>°F</button>
+            <button className={unit === "K" ? "active" : ""} onClick={() => dispatch(setUnit("K"))}>K</button>
         </div>
     );
 }

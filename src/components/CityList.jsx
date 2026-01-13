@@ -17,10 +17,13 @@ function CityList({ onSelect }) {
         onChange={(e) => setQuery(e.target.value)}
       />
 
-      <ul>
+      <ul className="city-grid">
         {filteredCities.map((city) => (
           <li key={city}>
-            <Link to={`/city/${city}`}>{city}</Link>
+            <Link to={`/city/${city}`} className="city-card">
+              <span className="city-name">{city}</span>
+              <span className="city-arrow">›</span>
+            </Link>
           </li>
         ))}
 
