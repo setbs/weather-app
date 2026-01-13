@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function CityList({ onSelect }) {
   const cities = ["Warszawa", "Wrocław", "Kraków", "Gdańsk", "Poznań"];
 
@@ -9,7 +11,7 @@ function CityList({ onSelect }) {
           style={{ cursor: "pointer" }}
           onClick={() => onSelect(city)}
         >
-          {city}
+          <Link to={`/city/${city}`}>{city}</Link> 
         </li>
       ))}
     </ul>

@@ -1,28 +1,20 @@
-import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import CityList from "./components/CityList";
-import WeatherDetails from './components/WeatherDetails';
-import { weatherData } from './data/weatherData';
-
+import Home from "./pages/Home"
+import City from './pages/City';
 
 
 function App() {
-  const [selectedCity, setSelectedCity] = useState(null);
-
   return (
     <div>
       <h1>Weather App</h1>
 
-      <CityList onSelect={setSelectedCity} />
-
-      <WeatherDetails
-        city={selectedCity}
-        data={selectedCity ? weatherData[selectedCity] : null}
-      />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/city/:name" element={<City />} />
+      </Routes>
     </div>
-  );
-}
-
-
+  )
+};
 
 export default App;
