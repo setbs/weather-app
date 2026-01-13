@@ -14,3 +14,20 @@ export const saveUnit = (unit) => {
 
     }
 }
+
+export const loadFavorites = () => {
+    try {
+        const saved = localStorage.getItem("favorites");
+        return saved ? JSON.parse(saved) : [];
+    } catch {
+        return [];
+    }
+};
+
+export const saveFavorites = (favorites) => {
+    try {
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+    } catch {
+
+    }
+};

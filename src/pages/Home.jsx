@@ -5,9 +5,9 @@ function Home({ onSelect }) {
         <section className="panel">
             <header className="panel-header">
                 <div>
-                    <p className="eyebrow">Locations</p>
-                    <h2 className="panel-title">Choose a city</h2>
-                    <p className="panel-subtitle">Quick search and navigate to forecast details.</p>
+                    <p className="eyebrow">Home</p>
+                    <h2 className="panel-title">Favorites and Search</h2>
+                    <p className="panel-subtitle">Store your favorite cities and search any city in the world.</p>
                 </div>
             </header>
 
