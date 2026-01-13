@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { loadUnit, saveUnit } from "../utils/localStorage";
 
 const initialState = {
-    value: "C",
+    value: loadUnit(),
 };
 
 const unitSlice = createSlice({
@@ -10,6 +11,7 @@ const unitSlice = createSlice({
     reducers: {
         setUnit: (state, action) => {
             state.value = action.payload;
+            saveUnit(action.payload);
         },
     },
 });
