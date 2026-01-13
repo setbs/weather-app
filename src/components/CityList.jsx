@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function CityList({ onSelect }) {
   const cities = ["Warszawa", "Wrocław", "Kraków", "Gdańsk", "Poznań"];
-
+  
   return (
     <ul>
       {cities.map((city) => (

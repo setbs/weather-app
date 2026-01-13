@@ -1,20 +1,30 @@
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import WeatherDetails from "../components/WeatherDetails";
-import { weatherData } from "../data/weatherData";
+import { getWeatherByCity } from "../api/weatherApi";
 
 function City() {
-    const { name } = useParams();
-    const data = weatherData[name];
+  const { name } = useParams();
+  const [weather, setWeather] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-    if (!data) {
-        return <p>City not found</p>
-    }
+  useEffect(() => {
+    setLoading(true);
 
-    return (
-        <div>
-            <WeatherDetails city={name} data={data} />
-        </div>
-    )
+    getWeatherByCity(name)
+      .then((data) => {
+        setWeather(data);
+        setLoading(false);
+      })
+      .catch(() => {
+        setLoading(false);
+      });
+  }, [name]);
+
+  if (loading) return <p>Loading...</p>;
+  if (!weather) return <p>Не вдалося отримати погоду 😢</p>;
+
+  return <WeatherDetails city={name} data={weather} />;
 }
 
 export default City;
