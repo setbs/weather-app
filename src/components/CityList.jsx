@@ -10,9 +10,13 @@ function CityList() {
   const dispatch = useDispatch();
   const favourites = useSelector((state) => state.favourites.items);
 
-  const filteredCities = cities.filter((city) =>
+  const filteredCities = cities
+  .filter((city) =>
     city.toLowerCase().includes(query.toLowerCase())
-  );
+  )
+  .slice(0, 5);
+
+  const isLimitReached = !favourites.includes(city) && favourites.length >= 3; 
 
   return (
     <div>
@@ -27,7 +31,9 @@ function CityList() {
         {filteredCities.map((city) => (
           <li key={city}>
             <Link to={`/city/${city}`}>{city}</Link>
-            <button onClick={() => dispatch(toggleFavourite(city))}>
+            <button onClick={() => dispatch(toggleFavourite(city))}
+              disabled={isLimitReached}
+            >
               {favourites.includes(city) ? "⭐" : "☆"}
             </button>
           </li>
