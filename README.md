@@ -2,6 +2,7 @@
 
 A modern weather app built with React + Vite, inspired by the clean iOS Weather aesthetic. It features glassmorphic UI, Poppins typography, global city search, favorites, unit switching, and animated weather backgrounds (rain, snow, wind).
 
+<link  https://setbs.github.io/weather-app/>
 <img width="1761" height="933" alt="изображение" src="https://github.com/user-attachments/assets/2519b6da-09b4-4391-ad86-380fe9ca76b4" />
 <img width="1557" height="909" alt="изображение" src="https://github.com/user-attachments/assets/560c9bf8-a4a3-4d3c-a9ad-9a9cd7b25d6d" />
 
