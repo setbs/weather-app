@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import City from "./pages/City";
@@ -13,7 +13,7 @@ function App() {
       <header className="app-header">
         <div>
           <p className="eyebrow">Forecast</p>
-          <h1 className="brand">Skycast</h1>
+          <Link to="/" className="brand" style={{ textDecoration: "none", color: "inherit" }}>Skycast</Link>
         </div>
         <UnitSwitcher />
       </header>
